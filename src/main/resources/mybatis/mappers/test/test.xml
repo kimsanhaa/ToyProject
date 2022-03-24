@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+					
+
+<mapper namespace="com.toy.project.temp.test.TempDAO">
+<resultMap id="TestResult" type="TempVO">
+<result property="tempdata" column="tempdata"/>
+
+</resultMap> 
+
+	
+	<select id="test" resultType="TempVO">
+
+		<![CDATA[	
+			INSERT INTO testtbl
+			VALUES ( #{tempdata} )
+			
+		]]>
+		
+	</select>
+	
+</mapper>
