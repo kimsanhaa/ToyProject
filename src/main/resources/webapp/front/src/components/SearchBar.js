@@ -1,4 +1,6 @@
+import SearchPlace from "./SearchPlace"
 export default function SearchBar(){
+
  return(
      <div style={{
         float:"left",
