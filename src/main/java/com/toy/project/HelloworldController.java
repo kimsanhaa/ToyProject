@@ -6,22 +6,18 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-@RestController
-@CrossOrigin("*")
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-
+@Controller
 public class HelloworldController {
-@RequestMapping("/home")
-public String home() {
-	System.out.println("react접속");
-	return "안녕하새우 ?? ";
-}
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String hello(Model model) {
+		model.addAttribute("hello", "서버에서 보내준 값입니다");
+		return "/hello";
+	}
+
 
 //@GetMapping(value="/temp/insert") 
 //public void tempInsert(@RequestParam("tempdata") String tempdata) throws Exception {
