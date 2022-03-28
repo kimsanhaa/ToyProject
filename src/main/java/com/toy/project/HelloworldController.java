@@ -12,21 +12,11 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloworldController {
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String hello(Model model) {
-		model.addAttribute("hello", "서버에서 보내준 값입니다");
-		return "/hello";
-	}
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String hello(Model model) {
+        model.addAttribute("hello", "서버에서 보내준 값입니다");
+        return "/login/login";
+    }
 
 
-//@GetMapping(value="/temp/insert") 
-//public void tempInsert(@RequestParam("tempdata") String tempdata) throws Exception {
-//	System.out.println(tempdata);
-//	
-//	}
-
-
- }
-
-
-
+}
