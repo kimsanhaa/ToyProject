@@ -1,6 +1,5 @@
 package com.toy.project.controller.member;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,23 +13,23 @@ import java.io.IOException;
 
 
 @Controller
-@RequestMapping("/oauth")
-public class OauthConnectController {
+@RequestMapping("/kakao")
+public class KakaoOauthController {
 
     //KAKAO Oauth 로그인 구현 컨트롤러
-    @GetMapping(value = "/kakao/login")
+    @GetMapping(value = "/login")
     public String kakaoLogin() {
 
         StringBuffer url = new StringBuffer();
         url.append("https://kauth.kakao.com/oauth/authorize?");
         url.append("client_id=" + "124440f1a07419d5a978972fe36a6f1e");
-        url.append("&redirect_uri= http://localhost:8090/oauth/kakao/login/callback");
+        url.append("&redirect_uri= http://localhost:8090/kakao/login/callback");
         url.append("&response_type=code");
 
         return "redirect:" + url.toString();
     }
 
-    @RequestMapping(value="/kakao/login/callback",
+    @RequestMapping(value="/login/callback",
             produces="application/json",
             method= {RequestMethod.GET, RequestMethod.POST})
     public String kakaoLogin(@RequestParam("code")String code,
