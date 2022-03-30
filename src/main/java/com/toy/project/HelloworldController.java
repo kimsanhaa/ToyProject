@@ -15,7 +15,7 @@ public class HelloworldController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String hello(Model model) {
         model.addAttribute("hello", "서버에서 보내준 값입니다");
-        return "/login/login";
+        return "/hello";
     }
 
 
