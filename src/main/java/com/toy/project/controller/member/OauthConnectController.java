@@ -16,6 +16,13 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/oauth")
 public class OauthConnectController {
+//http://localhost:8090/oauth/
+    // 일단 만들었어
+    @GetMapping("/")
+    public String KaKao(){
+        return "/login/login";
+    }
+
 
     //KAKAO Oauth 로그인 구현 컨트롤러
     @GetMapping(value = "/kakao/login")
