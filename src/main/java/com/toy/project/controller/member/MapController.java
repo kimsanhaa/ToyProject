@@ -6,28 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+//http://localhost:8090/gillBoard
 @Controller
 public class MapController {
-    @GetMapping("/hello-api")
-    @ResponseBody
-    public Hello helloapi(@RequestParam("name") String name) {
-        Hello hello = new Hello();
 
-        hello.setName(name);
-        return hello;
+
+    @GetMapping("/gillBoard")
+    public String GillBoardService(){
+        return "/board/gillBoard";
     }
 
-        static class Hello{
-            private String name;
 
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-        }
 
 
 
