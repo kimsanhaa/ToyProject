@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class TimeTraceAop {
-
+//    @Around("execution(* com.toy.project.특정위치*(..))") //공통 관심사항
     @Around("execution(* com.toy.project..*(..))") //공통 관심사항
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable{
        long start =  System.currentTimeMillis();
